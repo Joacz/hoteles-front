@@ -1,23 +1,50 @@
-import logo from './logo.svg';
 import './App.css';
+import { SearchIcon } from '@heroicons/react/outline';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <main className='main'>
+        <nav className='navBar'>
+          <div className='navItem'>
+
+<span className='navBrand'>Hoteles.com</span>
+
+
+          </div>
+
+          <ul className='navItem navList'>
+            <li className='listItem'>
+              <a href='' className='navLink'>
+                Principal
+              </a>
+            </li>
+            <li className='listItem'>
+              <a href='' className='navLink'>
+                Hoteles
+              </a>
+            </li>
+            <li className='listItem'>
+              <a href='' className='navLink'>
+                Sobre Nosotros
+              </a>
+            </li>
+            <li className='listItem'>
+              <a href='' className='navLink'>
+                Soporte
+              </a>
+            </li>
+            <li className='listItem'>
+              <form action='/search'>
+                <input type='text' />
+                <button type='submit'>
+                  <SearchIcon width='20' />
+                </button>
+              </form>
+            </li>
+          </ul>
+        </nav>
+      </main>
     </div>
   );
 }
