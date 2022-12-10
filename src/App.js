@@ -1,49 +1,87 @@
 import './App.css';
-import { SearchIcon } from '@heroicons/react/outline';
+import { Card, Footer, Nav, Article, Gallery } from './component/index';
+import imgs from './img/index';
+import { HomeIcon, CashIcon,MapIcon,UserGroupIcon, SparklesIcon, ChatAltIcon  } from '@heroicons/react/outline';
+
 
 function App() {
+  const images = [
+    imgs[0],
+    imgs[1],
+    imgs[2],
+    imgs[3],
+    imgs[4],
+    imgs[5],
+    imgs[6],
+    imgs[7],
+    imgs[8],
+  ];
+
   return (
     <div className='App'>
       <main className='main'>
-        <nav className='navBar'>
-          <div className='navItem'>
+        <Nav />
 
-<span className='navBrand'>Hoteles.com</span>
-
-
+        <div className='titleContainer'>
+          <div className='title'>
+            <h1>Hoteles.com</h1>
+            <p>La mejor página para reservar tus hoteles</p>
           </div>
+          <span className='subtitle'>
+            Nos dedicamos a hacer tu hospedaje más sencillo
+          </span>
+        </div>
 
-          <ul className='navItem navList'>
-            <li className='listItem'>
-              <a href='' className='navLink'>
-                Principal
-              </a>
-            </li>
-            <li className='listItem'>
-              <a href='' className='navLink'>
-                Hoteles
-              </a>
-            </li>
-            <li className='listItem'>
-              <a href='' className='navLink'>
-                Sobre Nosotros
-              </a>
-            </li>
-            <li className='listItem'>
-              <a href='' className='navLink'>
-                Soporte
-              </a>
-            </li>
-            <li className='listItem'>
-              <form action='/search'>
-                <input type='text' />
-                <button type='submit'>
-                  <SearchIcon width='20' />
-                </button>
-              </form>
-            </li>
-          </ul>
-        </nav>
+        <Article>
+          <section className='cardContainer'>
+            <Card
+              title={'Los mejores Hoteles'}
+              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.{' '}
+              "
+              img={<HomeIcon className='cardImg' />}
+            />
+            <Card
+              title={'Precios Accesibles'}
+              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.{' '}
+              "
+              img={<CashIcon className='cardImg' />}
+            />
+            <Card
+              title={'Hoteles en tu Zona'}
+              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.{' '}
+              "
+              img={<MapIcon className='cardImg' />}
+            />
+            <Card
+              title={'Soporte 24/7'}
+              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.{' '}
+              "
+              img={<UserGroupIcon className='cardImg' />}
+            />
+            <Card
+              title={'Valorados por los Usuarios'}
+              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.{' '}
+              "
+              img={<SparklesIcon className='cardImg' />}
+            />
+            <Card
+              title={'Contáctanos'}
+              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.{' '}
+              "
+              img={<ChatAltIcon className='cardImg' />}
+            />
+          </section>
+
+          <Gallery imgs={images} />
+        </Article>
+
+        <Footer />
       </main>
     </div>
   );
